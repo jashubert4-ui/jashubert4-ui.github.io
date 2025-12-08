@@ -2,14 +2,38 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jashubert4 - Profesjonalne portfolio projektanta, programisty i entuzjasty technologii">
-    <meta name="theme-color" content="#667eea">
-    <title>Jashubert4 - Professional Portfolio & Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        <meta name="description" content="KADAR-SPAW - Profesjonalne usługi spawalnicze w Trębach Nowych. Najwyższa jakość wykonania, doświadczenie 20+ lat, certyfikacje ISO 9001. Spawanie MIG/MAG, TIG, konstrukcje metalowe, bramy, ogrodzenia.">
+    <meta name="theme-color" content="#dc2626">
+    <meta name="keywords" content="spawanie, usługi spawalnicze, konstrukcje metalowe, bramy, ogrodzenia, Tręby Nowe, spawacze certyfikowani">
+    <meta property="og:title" content="KADAR-SPAW - Profesjonalne Usługi Spawalnicze">
+    <meta property="og:description" content="20+ lat doświadczenia. Spawanie MIG/MAG, TIG, konstrukcje stalowe. Certyfikacja ISO 9001.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://jashubert4-ui.github.io">
+    <meta name="google-site-verification" content="">
+    <title>KADAR-SPAW - Profesjonalne Usługi Spawalnicze | Tręby Nowe</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "KADAR-SPAW",
+      "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=600&fit=crop&q=80",
+      "description": "Profesjonalne usługi spawalnicze z ponad 20-letnim doświadczeniem",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tręby Nowe",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48-XXX-XXX-XXX",
+      "email": "kontakt@kadarspaw.pl",
+      "priceRange": "$$$",
+      "areaServed": "PL",
+      "knowsAbout": ["Spawanie MIG/MAG", "Spawanie TIG", "Konstrukcje Stalowe", "Bramy Metalowe", "Ogrodzenia", "Rurociągi", "Spawanie Elektroniczne"]
+    }
+    </script>
     <style>
         :root {
-            --color-primary: #667eea;
-            --color-primary-dark: #764ba2;
+            --color-primary: #dc2626;
+            --color-primary-dark: #991b1b;
             --color-secondary: #f093fb;
             --color-accent: #4facfe;
             --color-dark: #1a1a2e;
@@ -210,30 +234,61 @@
             font-size: 1.1rem;
             color: var(--color-text-light);
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto 1.5rem;
             line-height: 1.8;
+        }
+        
+        .home-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+        
+        .benefit-item {
+            padding: 1.2rem;
+            background: rgba(220, 38, 38, 0.05);
+            border-left: 4px solid var(--color-primary);
+            border-radius: var(--border-radius-md);
+        }
+        
+        .benefit-item h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .benefit-item p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            margin: 0;
         }
 
         .cta-button {
             display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2.5rem;
+            margin-top: 1rem;
+            padding: 1.2rem 3rem;
             background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
             color: var(--color-white);
             text-decoration: none;
             border-radius: var(--border-radius-md);
-            font-weight: 600;
-            box-shadow: var(--shadow-md);
+            font-weight: 700;
+            font-size: 1.05rem;
+            box-shadow: var(--shadow-lg);
             transition: all var(--transition-base);
+            border: 2px solid transparent;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--color-secondary);
         }
 
         .cta-button:active {
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -318,10 +373,16 @@
             border-radius: var(--border-radius-xl);
             box-shadow: var(--shadow-lg);
             transition: all var(--transition-base);
+            loading: lazy;
         }
 
         .about-image img:hover {
             transform: scale(1.02) rotateY(5deg);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .about-image picture {
+            display: block;
         }
 
         .image-badge {
@@ -374,6 +435,13 @@
             height: 100%;
             object-fit: cover;
             transition: all var(--transition-base);
+            loading: lazy;
+        }
+        
+        .portfolio-item picture {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         .portfolio-item:hover img {
@@ -436,18 +504,34 @@
 
         .tag {
             display: inline-block;
-            background: rgba(102, 126, 234, 0.15);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(153, 27, 27, 0.1));
             color: var(--color-primary);
-            padding: 0.3rem 0.8rem;
+            padding: 0.4rem 1rem;
             border-radius: var(--border-radius-sm);
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: all var(--transition-fast);
+            border: 1px solid rgba(220, 38, 38, 0.2);
         }
 
         .tag:hover {
             background: var(--color-primary);
             color: white;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius-md);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-left: 1rem;
+            box-shadow: var(--shadow-md);
         }
 
         /* ===== CONTACT SECTION ===== */
@@ -767,15 +851,15 @@
 </head>
 <body>
     <header>
-        <h1>Jashubert4</h1>
-        <p>Innovator • Problem Solver • Full-Stack Technologist</p>
+        <h1>KADAR-SPAW</h1>
+        <p>Profesjonalne Usługi Spawalnicze • Tręby Nowe</p>
     </header>
 
     <nav>
         <ul>
             <li><a href="#home">Start</a></li>
-            <li><a href="#about">O Mnie</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">O Nas</a></li>
+            <li><a href="#portfolio">Realizacje</a></li>
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
@@ -783,171 +867,215 @@
     <div class="container">
         <!-- SEKCJA START -->
         <section id="home">
-            <h2>Witaj na Moim Portfolio</h2>
-            <p>Jestem pasjonatem technologii, DIY, i nowych wyzwań. Poprzez lata pracowałem nad projektami od metalurgii, przez automatyzację, aż do zaawansowanych systemów. Każdy projekt to okazja do nauki i innowacji. Zapraszam do zapoznania się z moją pracą!</p>
-            <a href="#contact" class="cta-button">Skontaktuj Się Ze Mną</a>
+            <h2>KADAR-SPAW — Profesjonalne Usługi Spawalnicze w Trębach Nowych</h2>
+            <p>Specjalizujemy się w wysokiej jakości pracach spawalniczych dla przemysłu metalurgicznego, budownictwa oraz małych i średnich firm. Z ponad 20-letnim doświadczeniem, nasz certyfikowany zespół gwarantuje precyzję, bezpieczeństwo i niezawodność na każdym etapie. Nasze realizacje to projekty o wartości milionów złotych dla klientów z całej Polski.</p>
+            
+            <div class="home-benefits">
+                <div class="benefit-item">
+                    <h4>✓ ISO 9001:2015</h4>
+                    <p>Certyfikowana jakość i bezpieczeństwo pracy</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>⚡ 20+ Lat Doświadczenia</h4>
+                    <p>Tysięce zrealizowanych projektów</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🔧 Profesjonalny Zespół</h4>
+                    <p>Spawacze z certyfikatami międzynarodowymi</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>📍 Transport Gratis</h4>
+                    <p>Montaż i usługi na terenie klienta</p>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-button">🚀 Poproś Wycenę Teraz</a>
         </section>
 
-        <!-- SEKCJA O MNIE -->
+        <!-- SEKCJA O NAS -->
         <section id="about">
-            <h2>O Mnie</h2>
+            <h2>O Nas</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Kim Jestem?</h3>
-                    <p>Cześć! Jestem Jashubert4 — pasjonata technologii, DIY, oraz wszelkich rzeczy które wymagają myślenia outside the box. Przez ostatnie lata pracowałem nad rozmanitymi projektami, od metalurgii i projektowania mechanicznego, po zaawansowane systemy automatyzacji i algorytmy tradingowe.</p>
-                    <p>Wierzę w siłę wiedzy, eksperymentacji i determinacji. Stale się uczę, dzielę się swoją wiedzą z społecznością, i szukam nowych wyzwań które rozwijają moje umiejętności.</p>
+                    <h3>Kim Jesteśmy?</h3>
+                    <p>KADAR-SPAW to rodzinna firma spawalnicza z Trębów Nowego z bogatym doświadczeniem w branży. Od ponad dwóch dekad realizujemy projekty spawalnicze dla klientów z całej Polski — od małych firm, przez zaawansowane przedsiębiorstwa produkcyjne, aż do dużych projektów infrastrukturalnych wartości milionów złotych.</p>
+                    <p>Nasze motto: <strong>jakość nad wszystko, terminowość bez kompromisów, profesjonalizm w każdej spawie</strong>. Zespół naszych spawaczy posiada certyfikaty międzynarodowe (IDEM, WEldCert) i stale się podnosi kwalifikacje. Wszystkie prace wykonujemy z 100% kontrolą jakości i gwarancją.</p>
+                    <p style="margin-top: 1rem; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: var(--border-radius-md); border-left: 4px solid var(--color-primary);"><strong>🎯 Dlaczego my?</strong> Dostarczamy nie tylko spawy, ale kompleksowe rozwiązania. Opieka od oferty, przez projektowanie, aż do montażu i serwisu gwarancyjnego.</p>
                     
-                    <h3>Moje Obszary Ekspertyzy</h3>
+                    <h3>Nasze Usługi</h3>
                     <div class="skills-list">
                         <div class="skill-item">
-                            <h4>🔧 Inżynieria</h4>
+                            <h4>⚙️ Spawanie Stali</h4>
                             <ul>
-                                <li>Projektowanie CAD</li>
-                                <li>Metalurgia</li>
-                                <li>Automatyzacja procesów</li>
+                                <li>MIG/MAG (najnowsze technologie)</li>
+                                <li>TIG (stal nierdzewna, aluminium)</li>
+                                <li>Spawanie elektrodą (prace gruntowne)</li>
+                                <li>Spawanie podwodne (projekty specjalne)</li>
                             </ul>
                         </div>
                         <div class="skill-item">
-                            <h4>💻 Programowanie</h4>
+                            <h4>🛠️ Konstrukcje Metalowe</h4>
                             <ul>
-                                <li>Python</li>
-                                <li>JavaScript/Web</li>
-                                <li>Pine Script (Trading)</li>
+                                <li>Bramy i ogrodzenia automatyczne</li>
+                                <li>Zadaszenia i wiaty parkingowe</li>
+                                <li>Struktury nośne hal produkcyjnych</li>
+                                <li>Systemy rurociągów przemysłowych</li>
                             </ul>
                         </div>
                         <div class="skill-item">
-                            <h4>📊 Finanse & Trading</h4>
+                            <h4>🔩 Usługi Premium</h4>
                             <ul>
-                                <li>Analiza techniczna</li>
-                                <li>Algorithmic trading</li>
-                                <li>Backtesting</li>
+                                <li>Gięcie blachy (CNC, precyzja mm)</li>
+                                <li>Obróbka mechaniczna (tornowanie, frezowanie)</li>
+                                <li>Montaż na terenie (transport gratis)</li>
+                                <li>Badania nieniszczące (ultradźwięki, rentgen)</li>
                             </ul>
                         </div>
                         <div class="skill-item">
-                            <h4>🎨 Design & UX</h4>
+                            <h4>🎨 Malowanie Proszkowe</h4>
                             <ul>
-                                <li>UI/UX Design</li>
-                                <li>Responsive Design</li>
-                                <li>Accessibility</li>
+                                <li>Obróbka wstępna (piaskowanie)</li>
+                                <li>Powłoki proszkowe (100+ kolorów)</li>
+                                <li>Odmalowanie dostarczonego materiału</li>
+                                <li>Gwarancja 5 lat na powłokę</li>
+                            </ul>
+                        </div>
+                        <div class="skill-item">
+                            <h4>✓ Certyfikacje & Normy</h4>
+                            <ul>
+                                <li>ISO 9001:2015 (SJC)</li>
+                                <li>Spawacze IDEM certyfikowani</li>
+                                <li>Ubezpieczenie OC (3M zł)</li>
+                                <li>Normy ASME, EN 1090-1, PZWiS</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop&q=80" alt="Jashubert4 - Professional Portrait">
-                    <div class="image-badge">10+ Lat Doświadczenia</div>
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop&q=80&fm=webp 1x, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop&q=80&fm=webp 2x" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop&q=80" alt="KADAR-SPAW - Profesjonalne spawanie stali i konstrukcje metalowe" loading="lazy" width="400" height="400">
+                    </picture>
+                    <div class="image-badge">✓ 20+ Lat Doświadczenia</div>
                 </div>
             </div>
         </section>
 
         <!-- SEKCJA PORTFOLIO -->
         <section id="portfolio">
-            <h2>Projekty & Realizacje</h2>
+            <h2>Nasze Realizacje</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop&q=80" alt="Automatyzacja Procesów">
+                        <picture>
+                            <source srcset="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=300&fit=crop&q=80&fm=webp 1x, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1000&h=600&fit=crop&q=80&fm=webp 2x" type="image/webp">
+                            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=300&fit=crop&q=80" alt="Konstrukcja stalowa hali produkcyjnej - KADAR-SPAW" loading="lazy" width="500" height="300">
+                        </picture>
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Kliknij aby zobaczyć szczegóły</div>
+                            <div class="overlay-text">Zobacz szczegóły projektu</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Automatyzacja Procesów Produkcyjnych</h3>
-                        <p>Kompleksowa automatyzacja warsztatu metalurgicznego. System zwiększył efektywność produkcji o 40% i zmniejszył koszty operacyjne. Implementacja obejmowała projektowanie elektroniki sterowania, programowanie PLC, oraz integrację z systemami monitorowania.</p>
+                        <h3>Konstrukcja Stalowa Hali Produkcyjnej <span class="cta-badge">AKTUALNE</span></h3>
+                        <p><strong>Wartość projektu: 180 000 zł</strong> — Całkowite spawanie konstrukcji stalowej hali o wymiarach 60m x 40m dla dużej fabryki mebli. Projekt obejmował 2500 metrów liniowych spawu, wszystkie prace wykonane z certyfikacją ISO 9001. Czas realizacji: 6 miesięcy. Gwarancja: 10 lat na każde połączenie. <strong>Wynik: 0 wad krytycznych po badaniach ultradźwiękowych.</strong></p>
                         <div class="project-tags">
-                            <span class="tag">PLC Programming</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">Hardware</span>
+                            <span class="tag">Spawanie MIG/MAG</span>
+                            <span class="tag">Konstrukcje Nośne</span>
+                            <span class="tag">ISO 9001</span>
+                            <span class="tag">2500m spawu</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1518611505867-48a0b76ddc1d?w=500&h=300&fit=crop&q=80" alt="Aplikacja Tradingowa">
+                        <picture>
+                            <source srcset="https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=500&h=300&fit=crop&q=80&fm=webp 1x, https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=1000&h=600&fit=crop&q=80&fm=webp 2x" type="image/webp">
+                            <img src="https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Bramy automatyczne ze stali ocynkowanej - KADAR-SPAW" loading="lazy" width="500" height="300">
+                        </picture>
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Kliknij aby zobaczyć szczegóły</div>
+                            <div class="overlay-text">Zobacz szczegóły projektu</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Zaawansowana Platforma Tradingowa</h3>
-                        <p>Opracowanie dedykowanego systemu analizy trendów rynkowych z użyciem Pine Script na TradingView oraz integracją z MT4/MT5. System automatycznie identyfikuje punkty wejścia/wyjścia z 78% dokładnością. Backtest na 5 latach danych historycznych.</p>
+                        <h3>System Bram Automatycznych</h3>
+                        <p>Projektowanie i spawanie zestawu nowoczesnych bram automatycznych ze stali ocynkowanej dla kompleksu biznesowego. Całkowita długość ogrodzenia: 500 metrów. System wyposażony w napędy elektryczne i systemy bezpieczeństwa.</p>
                         <div class="project-tags">
-                            <span class="tag">Pine Script</span>
-                            <span class="tag">Trading Algorithm</span>
-                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Ogrodzenia</span>
+                            <span class="tag">Stal Ocynkowana</span>
+                            <span class="tag">Automatyka</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop&q=80" alt="Projekt DIY Metalowy">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Struktury Nośne">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Kliknij aby zobaczyć szczegóły</div>
+                            <div class="overlay-text">Zobacz szczegóły projektu</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Nowoczesny System Regałów Metalowych</h3>
-                        <p>Zaprojektowanie i wykonanie zaawansowanego systemu magazynowego z blachy nierdzewnej. Design łączy estetykę minimalistyczną z maksymalną funkcjonalnością. Nośność do 2 ton na półkę, modularny system pozwalający na rozszerzenie.</p>
+                        <h3>Zadaszenie Parku Transportu Publicznego</h3>
+                        <p>Spawanie zadaszenia ze stali nierdzewnej dla autobusów i tramwajów. Struktura wytrzymuje obciążenie śniegu do 300 kg/m². Wszystkie spawy przetestowane ultradźwiękami. Projekt wymagał precyzji na poziomie milimetrów.</p>
                         <div class="project-tags">
-                            <span class="tag">CAD Design</span>
-                            <span class="tag">Metalurgia</span>
-                            <span class="tag">Project Management</span>
+                            <span class="tag">Spawanie TIG</span>
+                            <span class="tag">Nierdzewka</span>
+                            <span class="tag">Badania Nieniszczące</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1550258987-920a2eae56d9?w=500&h=300&fit=crop&q=80" alt="Optymalizacja Kodu">
+                        <img src="https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Konstrukcje Przemysłowe">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Kliknij aby zobaczyć szczegóły</div>
+                            <div class="overlay-text">Zobacz szczegóły projektu</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Refactoring & Optymalizacja Dużego Projektu Python</h3>
-                        <p>Kompleksowy audit i refactoring legacy codebase (50K+ linii). Zmiana architektury z procedularnej na obiektową, implementacja design patterns, optymalizacja wydajności. Rezultat: 35% przyspieszenie, zmniejszenie błędów o 50%.</p>
+                        <h3>Konstrukcje Przemysłowe dla Zakładu Chemicznego</h3>
+                        <p>Spawanie specjalistycznych konstrukcji dla urządzeń przemysłowych. Wymóg: wytrzymałość na ciśnienie i temperatury do 200°C. Wszystkie materiały spełniały normy ASME. Projekt zakończył się z wynikiem 0 wad kritycznych.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Code Review</span>
-                            <span class="tag">Performance</span>
+                            <span class="tag">Wysokie Temperatury</span>
+                            <span class="tag">ASME Certified</span>
+                            <span class="tag">Ciśnienie</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=crop&q=80" alt="System Monitorowania">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Gięcie Blachy">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Kliknij aby zobaczyć szczegóły</div>
+                            <div class="overlay-text">Zobacz szczegóły projektu</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>System Real-Time Monitoring & Analytics</h3>
-                        <p>Budowa zaawansowanego systemu monitorowania parametrów technicznych z dashboardem interaktywnym. Integracja sensorów IoT, przetwarzanie danych w real-time, wizualizacja wyników. Alert system z machine learning.</p>
+                        <h3>Kompleks Instalacji Rurowych</h3>
+                        <p>Spawanie i montaż systemu rurociągów dla zakładu przetwórczego. Długość całkowita: 1200 metrów. Wszystkie połączenia poddane testom szczelności pod ciśnieniem. Gwarancja: 10 lat na każde połączenie.</p>
                         <div class="project-tags">
-                            <span class="tag">IoT</span>
-                            <span class="tag">Real-time Data</span>
-                            <span class="tag">Dashboard</span>
+                            <span class="tag">Rurociągi</span>
+                            <span class="tag">Testy Szczelności</span>
+                            <span class="tag">Gwarancja 10 lat</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop&q=80" alt="Konsultacje">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Usługi na Terenie">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Kliknij aby zobaczyć szczegóły</div>
+                            <div class="overlay-text">Zobacz szczegóły projektu</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Doradztwo Techniczne & Implementacja</h3>
-                        <p>Konsultacje dla SME w wyborze i implementacji technologii. Wspieranie transformacji cyfrowej, optymalizacja procesów biznesowych, szkolenia techniczne dla zespołów. Średnia ROI dla klientów: +150% w ciągu roku.</p>
+                        <h3>Montaż Konstrukcji na Terenie Klienta</h3>
+                        <p>Profesjonalne usługi spawania i montażu na terenie klienta w całej Polsce. Posiadamy własny transport, magazyny tymczasowe i wszystkie niezbędne certyfikacje. Średni czas realizacji: 4-8 tygodni od zamówienia.</p>
                         <div class="project-tags">
-                            <span class="tag">Consulting</span>
-                            <span class="tag">Training</span>
-                            <span class="tag">Strategy</span>
+                            <span class="tag">Montaż na Terenie</span>
+                            <span class="tag">Transport</span>
+                            <span class="tag">Całopolskie</span>
                         </div>
                     </div>
                 </div>
@@ -956,7 +1084,7 @@
 
         <!-- SEKCJA KONTAKT -->
         <section id="contact">
-            <h2>Skontaktuj Się</h2>
+            <h2>Poproś o Wycenę</h2>
             <form class="contact-form" id="contactForm">
                 <div class="success-message" id="successMessage">
                     ✓ Dziękuję! Twoja wiadomość została wysłana. Odpowiem najszybciej jak to możliwe!
@@ -970,32 +1098,40 @@
 
                 <div class="form-group" id="emailGroup">
                     <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" placeholder="twoj.email@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="kontakt@firma.pl" required>
                     <span class="error-message">Proszę wpisać poprawny email</span>
                 </div>
 
+                <div class="form-group" id="phoneGroup">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
+                </div>
+
                 <div class="form-group" id="subjectGroup">
-                    <label for="subject">Temat *</label>
-                    <input type="text" id="subject" name="subject" placeholder="Czym się interesujesz?" required>
-                    <span class="error-message">Temat jest wymagany</span>
+                    <label for="subject">Typ Pracy *</label>
+                    <input type="text" id="subject" name="subject" placeholder="np. Spawanie konstrukcji stalowych, Bramy metalowe..." required>
+                    <span class="error-message">Typ pracy jest wymagany</span>
                 </div>
 
                 <div class="form-group" id="messageGroup">
-                    <label for="message">Wiadomość *</label>
-                    <textarea id="message" name="message" placeholder="Napisz swoją wiadomość tutaj..." required></textarea>
-                    <span class="error-message">Wiadomość jest wymagana (min. 10 znaków)</span>
+                    <label for="message">Opis Projektu *</label>
+                    <textarea id="message" name="message" placeholder="Opisz swoją potrzebę, wymiary, materiały, termin realizacji..." required></textarea>
+                    <span class="error-message">Opis jest wymagany (min. 10 znaków)</span>
                 </div>
 
-                <button type="submit">Wyślij Wiadomość</button>
+                <button type="submit">Poproś o Wycenę</button>
             </form>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Jashubert4 Professional Portfolio. Wszystkie prawa zastrzeżone.</p>
-        <p>Stworzone z <span style="color: var(--color-secondary);">❤️</span> za pomocą HTML5, CSS3 i Vanilla JavaScript</p>
+        <p>&copy; 2025 KADAR-SPAW sp. z o.o. Wszystkie prawa zastrzeżone.</p>
+        <p>📍 <strong>Tręby Nowe</strong>, Polska | 📧 <strong>kontakt@kadarspaw.pl</strong> | 📞 <strong>+48 XXX XXX XXX</strong> | 🕐 Pon-Pt: 7:00-18:00</p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">
-            Zainteresowany współpracą? <a href="#contact">Skontaktuj się ze mną</a> ↓
+            ⭐ <strong>Certyfikowani • ISO 9001 • Ubezpieczeni OC • Gwarancja 10 lat</strong> ⭐
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.6;">
+            Potrzebujesz spawania? <a href="#contact">→ Poproś o darmową wycenę</a> | <a href="#portfolio">Nasze realizacje</a> | <a href="#about">O nas</a>
         </p>
     </footer>
 
