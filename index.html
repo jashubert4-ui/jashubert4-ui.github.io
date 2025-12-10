@@ -2,43 +2,25 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">        <meta name="description" content="KADAR-SPAW - Profesjonalne usługi spawalnicze w Trębach Nowych. Najwyższa jakość wykonania, doświadczenie 20+ lat, certyfikacje ISO 9001. Spawanie MIG/MAG, TIG, konstrukcje metalowe, bramy, ogrodzenia.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KADAR-SPAW - Profesjonalne usługi spawalnicze, ślusarskie i malowanie proszkowe w Trębach Nowych. Najwyższa jakość, doświadczenie, solidność.">
     <meta name="theme-color" content="#dc2626">
-    <meta name="keywords" content="spawanie, usługi spawalnicze, konstrukcje metalowe, bramy, ogrodzenia, Tręby Nowe, spawacze certyfikowani">
-    <meta property="og:title" content="KADAR-SPAW - Profesjonalne Usługi Spawalnicze">
-    <meta property="og:description" content="20+ lat doświadczenia. Spawanie MIG/MAG, TIG, konstrukcje stalowe. Certyfikacja ISO 9001.">
+    <meta name="keywords" content="spawanie, ślusarstwo, malowanie proszkowe, konstrukcje metalowe, bramy, balustrady, Tręby Nowe">
+    <meta property="og:title" content="KADAR-SPAW - Spawanie, Ślusarstwo, Malowanie Proszkowe">
+    <meta property="og:description" content="Profesjonalne usługi spawalnicze i ślusarskie. Od 2025 roku także malowanie proszkowe.">
     <meta property="og:type" content="business.business">
     <meta property="og:url" content="https://jashubert4-ui.github.io">
-    <meta name="google-site-verification" content="">
-    <title>KADAR-SPAW - Profesjonalne Usługi Spawalnicze | Tręby Nowe</title>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "KADAR-SPAW",
-      "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=600&fit=crop&q=80",
-      "description": "Profesjonalne usługi spawalnicze z ponad 20-letnim doświadczeniem",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tręby Nowe",
-        "addressCountry": "PL"
-      },
-      "telephone": "+48-XXX-XXX-XXX",
-      "email": "kontakt@kadarspaw.pl",
-      "priceRange": "$$$",
-      "areaServed": "PL",
-      "knowsAbout": ["Spawanie MIG/MAG", "Spawanie TIG", "Konstrukcje Stalowe", "Bramy Metalowe", "Ogrodzenia", "Rurociągi", "Spawanie Elektroniczne"]
-    }
-    </script>
+    <title>KADAR-SPAW - Spawanie, Ślusarstwo, Malowanie Proszkowe | Tręby Nowe</title>
     <style>
         :root {
             --color-primary: #dc2626;
             --color-primary-dark: #991b1b;
+            --color-primary-light: #fee2e2;
             --color-secondary: #f093fb;
             --color-accent: #4facfe;
             --color-dark: #1a1a2e;
             --color-darker: #0f0f1e;
-            --color-light: #f4f4f4;
+            --color-light: #f8f9fa;
             --color-white: #ffffff;
             --color-text: #2d3436;
             --color-text-light: #636e72;
@@ -81,12 +63,11 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ===== HEADER & NAVIGATION ===== */
+        /* ===== HEADER WITH LOGO ===== */
         header {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
             color: var(--color-white);
-            padding: 4rem 2rem;
-            text-align: center;
+            padding: 2rem 2rem 3rem;
             position: relative;
             overflow: hidden;
         }
@@ -115,24 +96,44 @@
             pointer-events: none;
         }
 
-        header h1 {
-            font-size: clamp(2rem, 8vw, 3.5rem);
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            max-width: 180px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .header-text h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
             font-weight: 700;
             margin-bottom: 0.5rem;
             letter-spacing: -1px;
-            position: relative;
-            z-index: 1;
             animation: fadeInDown 0.8s ease-out;
         }
 
-        header p {
-            font-size: clamp(1rem, 3vw, 1.25rem);
+        .header-text p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
             opacity: 0.95;
-            position: relative;
-            z-index: 1;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
+        /* ===== NAVIGATION ===== */
         nav {
             background: var(--color-darker);
             padding: 0;
@@ -165,6 +166,7 @@
             font-weight: 500;
             transition: all var(--transition-fast);
             position: relative;
+            font-size: 0.95rem;
         }
 
         nav a::after {
@@ -233,42 +235,50 @@
         #home p {
             font-size: 1.1rem;
             color: var(--color-text-light);
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
             line-height: 1.8;
         }
-        
+
         .home-benefits {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
-            margin: 2rem auto;
+            max-width: 1000px;
+            margin: 2.5rem auto;
             text-align: left;
         }
-        
+
         .benefit-item {
-            padding: 1.2rem;
-            background: rgba(220, 38, 38, 0.05);
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), rgba(220, 38, 38, 0.02));
             border-left: 4px solid var(--color-primary);
             border-radius: var(--border-radius-md);
+            transition: all var(--transition-base);
         }
-        
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
         .benefit-item h4 {
             color: var(--color-primary);
             margin-bottom: 0.5rem;
-            font-size: 1rem;
+            font-size: 1.05rem;
+            font-weight: 600;
         }
-        
+
         .benefit-item p {
             color: var(--color-text-light);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin: 0;
+            line-height: 1.6;
         }
 
         .cta-button {
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             padding: 1.2rem 3rem;
             background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
             color: var(--color-white);
@@ -287,16 +297,12 @@
             border-color: var(--color-secondary);
         }
 
-        .cta-button:active {
-            transform: translateY(-2px);
-        }
-
         /* ===== ABOUT SECTION ===== */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            align-items: center;
+            align-items: start;
         }
 
         .about-text h3 {
@@ -304,6 +310,7 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             margin-top: 1.5rem;
+            font-weight: 600;
         }
 
         .about-text h3:first-child {
@@ -314,57 +321,41 @@
             color: var(--color-text-light);
             margin-bottom: 1rem;
             line-height: 1.8;
+            text-align: justify;
         }
 
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .highlight {
+            color: var(--color-primary);
+            font-weight: 600;
         }
 
-        .skill-item {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+        .highlight-box {
+            margin-top: 1.5rem;
             padding: 1.5rem;
-            border-radius: var(--border-radius-lg);
+            background: linear-gradient(135deg, var(--color-primary-light), rgba(220, 38, 38, 0.05));
             border-left: 4px solid var(--color-primary);
-            transition: all var(--transition-base);
+            border-radius: var(--border-radius-md);
         }
 
-        .skill-item:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .skill-item h4 {
+        .highlight-box h4 {
             color: var(--color-primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             font-size: 1.1rem;
+            font-weight: 600;
         }
 
-        .skill-item ul {
-            list-style: none;
-            color: var(--color-text-light);
-            font-size: 0.95rem;
+        .highlight-box p {
+            margin-bottom: 0.5rem;
         }
 
-        .skill-item li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .skill-item li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-            font-weight: bold;
+        .highlight-box p:last-child {
+            margin-bottom: 0;
         }
 
         .about-image {
             text-align: center;
-            position: relative;
+            position: sticky;
+            top: 120px;
         }
 
         .about-image img {
@@ -373,16 +364,11 @@
             border-radius: var(--border-radius-xl);
             box-shadow: var(--shadow-lg);
             transition: all var(--transition-base);
-            loading: lazy;
         }
 
         .about-image img:hover {
-            transform: scale(1.02) rotateY(5deg);
+            transform: scale(1.02);
             box-shadow: var(--shadow-xl);
-        }
-        
-        .about-image picture {
-            display: block;
         }
 
         .image-badge {
@@ -402,12 +388,12 @@
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
         .portfolio-item {
-            background: var(--color-light);
+            background: var(--color-white);
             border-radius: var(--border-radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-md);
@@ -426,8 +412,9 @@
         .portfolio-item-image {
             position: relative;
             width: 100%;
-            height: 220px;
+            height: 240px;
             overflow: hidden;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
         }
 
         .portfolio-item img {
@@ -435,13 +422,6 @@
             height: 100%;
             object-fit: cover;
             transition: all var(--transition-base);
-            loading: lazy;
-        }
-        
-        .portfolio-item picture {
-            display: block;
-            width: 100%;
-            height: 100%;
         }
 
         .portfolio-item:hover img {
@@ -455,7 +435,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(102, 126, 234, 0.9);
+            background: rgba(220, 38, 38, 0.85);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -475,14 +455,15 @@
         }
 
         .portfolio-item-content {
-            padding: 1.8rem;
+            padding: 2rem;
         }
 
         .portfolio-item h3 {
             color: var(--color-primary);
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             font-size: 1.3rem;
             transition: color var(--transition-fast);
+            font-weight: 600;
         }
 
         .portfolio-item:hover h3 {
@@ -492,51 +473,47 @@
         .portfolio-item p {
             color: var(--color-text-light);
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin: 0;
         }
 
-        .project-tags {
-            margin-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        /* ===== GALLERY SECTION ===== */
+        .gallery-info {
+            text-align: center;
+            padding: 3rem 2rem;
         }
 
-        .tag {
+        .gallery-info p {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 1.5rem auto;
+            line-height: 1.8;
+        }
+
+        .gallery-button {
             display: inline-block;
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(153, 27, 27, 0.1));
-            color: var(--color-primary);
-            padding: 0.4rem 1rem;
-            border-radius: var(--border-radius-sm);
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all var(--transition-fast);
-            border: 1px solid rgba(220, 38, 38, 0.2);
-        }
-
-        .tag:hover {
-            background: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .cta-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: white;
-            padding: 0.6rem 1.2rem;
+            margin-top: 1.5rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #1877f2, #0a66c2);
+            color: var(--color-white);
+            text-decoration: none;
             border-radius: var(--border-radius-md);
-            font-size: 0.9rem;
             font-weight: 700;
-            margin-left: 1rem;
-            box-shadow: var(--shadow-md);
+            font-size: 1.05rem;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+        }
+
+        .gallery-button:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, #0a66c2, #054399);
         }
 
         /* ===== CONTACT SECTION ===== */
         .contact-form {
-            max-width: 600px;
+            max-width: 700px;
             margin: 2rem auto;
         }
 
@@ -552,7 +529,7 @@
             font-size: 0.95rem;
         }
 
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 0.9rem 1.2rem;
             border: 2px solid var(--color-border);
@@ -568,16 +545,82 @@
             color: var(--color-text-light);
         }
 
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             outline: none;
             border-color: var(--color-primary);
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
         }
 
         textarea {
             resize: vertical;
             min-height: 150px;
             font-family: 'Segoe UI', sans-serif;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 0.9rem 1.2rem;
+            background: linear-gradient(135deg, var(--color-primary-light), rgba(220, 38, 38, 0.05));
+            border: 2px dashed var(--color-primary);
+            border-radius: var(--border-radius-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        .file-input-label:hover {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.08));
+            border-color: var(--color-primary-dark);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-list {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--color-light);
+            border-radius: var(--border-radius-md);
+            display: none;
+        }
+
+        .file-list.show {
+            display: block;
+        }
+
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .file-item:last-child {
+            border-bottom: none;
+        }
+
+        .remove-file {
+            color: var(--color-error);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+
+        .remove-file:hover {
+            color: var(--color-primary-dark);
         }
 
         .form-group-error input,
@@ -636,8 +679,9 @@
             height: 300px;
         }
 
-        button:active {
-            transform: translateY(0);
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .success-message {
@@ -734,13 +778,29 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 900px) {
+            .header-content {
+                grid-template-columns: 100px 1fr;
+                gap: 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
-                padding: 2.5rem 1rem;
+                padding: 2rem 1rem 2.5rem;
             }
 
-            header h1 {
-                font-size: 2rem;
+            .header-content {
+                grid-template-columns: 80px 1fr;
+                gap: 1rem;
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-text p {
+                font-size: 0.9rem;
             }
 
             nav ul {
@@ -750,6 +810,7 @@
             nav a {
                 padding: 1rem 1.5rem;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 0.9rem;
             }
 
             section {
@@ -757,9 +818,17 @@
                 padding: 2rem 1rem;
             }
 
+            section h2 {
+                font-size: 1.5rem;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .about-image {
+                position: static;
             }
 
             .about-image img {
@@ -768,10 +837,11 @@
 
             .portfolio-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
-            .skills-list {
-                grid-template-columns: 1fr;
+            .portfolio-item-image {
+                height: 200px;
             }
 
             .image-badge {
@@ -783,25 +853,35 @@
         }
 
         @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5rem;
+            header {
+                padding: 1.5rem 1rem 2rem;
             }
 
-            header p {
-                font-size: 0.95rem;
+            .header-content {
+                grid-template-columns: 70px 1fr;
+                gap: 0.8rem;
             }
 
-            section h2 {
-                font-size: 1.5rem;
+            .header-text h1 {
+                font-size: 1.4rem;
+            }
+
+            .header-text p {
+                font-size: 0.85rem;
             }
 
             nav a {
                 padding: 0.8rem 1rem;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
             button {
                 padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
                 font-size: 0.95rem;
             }
         }
@@ -824,7 +904,7 @@
             outline-offset: 2px;
         }
 
-        /* ===== DARK MODE (OPTIONAL) ===== */
+        /* ===== DARK MODE ===== */
         @media (prefers-color-scheme: dark) {
             :root {
                 --color-light: #1a1a2e;
@@ -838,21 +918,33 @@
                 background: var(--color-dark);
             }
 
-            input, textarea {
+            input, textarea, select {
                 background: #2d2d44;
                 border-color: #3d3d54;
+                color: #e0e0e0;
             }
 
-            input:focus, textarea:focus {
+            input:focus, textarea:focus, select:focus {
                 border-color: var(--color-primary);
+            }
+
+            .file-input-label {
+                background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>KADAR-SPAW</h1>
-        <p>Profesjonalne Usługi Spawalnicze • Tręby Nowe</p>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="KADAR-SPAW Logo" loading="eager" width="180" height="180">
+            </div>
+            <div class="header-text">
+                <h1>KADAR-SPAW</h1>
+                <p>Spawanie • Ślusarstwo • Malowanie Proszkowe</p>
+            </div>
+        </div>
     </header>
 
     <nav>
@@ -860,6 +952,8 @@
             <li><a href="#home">Start</a></li>
             <li><a href="#about">O Nas</a></li>
             <li><a href="#portfolio">Realizacje</a></li>
+            <li><a href="#painting">Malowanie Proszkowe</a></li>
+            <li><a href="#gallery">Galeria</a></li>
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
@@ -867,29 +961,29 @@
     <div class="container">
         <!-- SEKCJA START -->
         <section id="home">
-            <h2>KADAR-SPAW — Profesjonalne Usługi Spawalnicze w Trębach Nowych</h2>
-            <p>Specjalizujemy się w wysokiej jakości pracach spawalniczych dla przemysłu metalurgicznego, budownictwa oraz małych i średnich firm. Z ponad 20-letnim doświadczeniem, nasz certyfikowany zespół gwarantuje precyzję, bezpieczeństwo i niezawodność na każdym etapie. Nasze realizacje to projekty o wartości milionów złotych dla klientów z całej Polski.</p>
+            <h2>Witaj w KADAR-SPAW</h2>
+            <p>W <span class="highlight">KADAR-SPAW</span> specjalizujemy się w wykonywaniu usług <span class="highlight">spawalniczych i ślusarskich najwyższej jakości</span>. Od 2025 roku oferujemy również <span class="highlight">profesjonalne malowanie proszkowe</span> — zarówno dla własnych konstrukcji, jak i dostarczonego materiału. Pracujemy z różnymi metalami: <span class="highlight">stalą, żelazem, aluminium</span> i innymi. Naszą siłą jest <span class="highlight">solidność, terminowość i dbałość o każdy detal.</span></p>
             
             <div class="home-benefits">
                 <div class="benefit-item">
-                    <h4>✓ ISO 9001:2015</h4>
-                    <p>Certyfikowana jakość i bezpieczeństwo pracy</p>
+                    <h4>🔥 Spawanie Profesjonalne</h4>
+                    <p>TIG, MIG, MAG, MMA — każda technika do odpowiedniego materiału</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>⚡ 20+ Lat Doświadczenia</h4>
-                    <p>Tysięce zrealizowanych projektów</p>
+                    <h4>🛠️ Ślusarstwo Precyzyjne</h4>
+                    <p>Balustrady, bramy, ogrodzenia, wiaty i konstrukcje na miarę</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>🔧 Profesjonalny Zespół</h4>
-                    <p>Spawacze z certyfikatami międzynarodowymi</p>
+                    <h4>🎨 Malowanie Proszkowe</h4>
+                    <p>Nowa usługa — ochrona i estetyka dla Twoich metali</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>📍 Transport Gratis</h4>
-                    <p>Montaż i usługi na terenie klienta</p>
+                    <h4>⚡ Solidność i Terminowość</h4>
+                    <p>Każde zamówienie realizujemy z pełnym zaangażowaniem</p>
                 </div>
             </div>
             
-            <a href="#contact" class="cta-button">🚀 Poproś Wycenę Teraz</a>
+            <a href="#contact" class="cta-button">📞 Poproś Wycenę</a>
         </section>
 
         <!-- SEKCJA O NAS -->
@@ -898,187 +992,194 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Kim Jesteśmy?</h3>
-                    <p>KADAR-SPAW to rodzinna firma spawalnicza z Trębów Nowego z bogatym doświadczeniem w branży. Od ponad dwóch dekad realizujemy projekty spawalnicze dla klientów z całej Polski — od małych firm, przez zaawansowane przedsiębiorstwa produkcyjne, aż do dużych projektów infrastrukturalnych wartości milionów złotych.</p>
-                    <p>Nasze motto: <strong>jakość nad wszystko, terminowość bez kompromisów, profesjonalizm w każdej spawie</strong>. Zespół naszych spawaczy posiada certyfikaty międzynarodowe (IDEM, WEldCert) i stale się podnosi kwalifikacje. Wszystkie prace wykonujemy z 100% kontrolą jakości i gwarancją.</p>
-                    <p style="margin-top: 1rem; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: var(--border-radius-md); border-left: 4px solid var(--color-primary);"><strong>🎯 Dlaczego my?</strong> Dostarczamy nie tylko spawy, ale kompleksowe rozwiązania. Opieka od oferty, przez projektowanie, aż do montażu i serwisu gwarancyjnego.</p>
-                    
-                    <h3>Nasze Usługi</h3>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <h4>⚙️ Spawanie Stali</h4>
-                            <ul>
-                                <li>MIG/MAG (najnowsze technologie)</li>
-                                <li>TIG (stal nierdzewna, aluminium)</li>
-                                <li>Spawanie elektrodą (prace gruntowne)</li>
-                                <li>Spawanie podwodne (projekty specjalne)</li>
-                            </ul>
-                        </div>
-                        <div class="skill-item">
-                            <h4>🛠️ Konstrukcje Metalowe</h4>
-                            <ul>
-                                <li>Bramy i ogrodzenia automatyczne</li>
-                                <li>Zadaszenia i wiaty parkingowe</li>
-                                <li>Struktury nośne hal produkcyjnych</li>
-                                <li>Systemy rurociągów przemysłowych</li>
-                            </ul>
-                        </div>
-                        <div class="skill-item">
-                            <h4>🔩 Usługi Premium</h4>
-                            <ul>
-                                <li>Gięcie blachy (CNC, precyzja mm)</li>
-                                <li>Obróbka mechaniczna (tornowanie, frezowanie)</li>
-                                <li>Montaż na terenie (transport gratis)</li>
-                                <li>Badania nieniszczące (ultradźwięki, rentgen)</li>
-                            </ul>
-                        </div>
-                        <div class="skill-item">
-                            <h4>🎨 Malowanie Proszkowe</h4>
-                            <ul>
-                                <li>Obróbka wstępna (piaskowanie)</li>
-                                <li>Powłoki proszkowe (100+ kolorów)</li>
-                                <li>Odmalowanie dostarczonego materiału</li>
-                                <li>Gwarancja 5 lat na powłokę</li>
-                            </ul>
-                        </div>
-                        <div class="skill-item">
-                            <h4>✓ Certyfikacje & Normy</h4>
-                            <ul>
-                                <li>ISO 9001:2015 (SJC)</li>
-                                <li>Spawacze IDEM certyfikowani</li>
-                                <li>Ubezpieczenie OC (3M zł)</li>
-                                <li>Normy ASME, EN 1090-1, PZWiS</li>
-                            </ul>
-                        </div>
+                    <p><span class="highlight">KADAR-SPAW to wieloletnia tradycja spawalnictwa i ślusarstwa</span>, łącząca doświadczenie z nowoczesnością. Pracujemy z <span class="highlight">pełnym profesjonalizmem i zaangażowaniem</span>, traktując każde zlecenie indywidualnie. Naszym celem jest nie tylko wykonanie pracy, ale dostarczenie rozwiązania, które będzie służyć Ci przez lata.</p>
+
+                    <h3>Co nas Wyróżnia?</h3>
+                    <p>Pracujemy z <span class="highlight">różnymi stopami stali i innymi metalami jak m. in. aluminium czy żeliwo.</span> Stosujemy <span class="highlight">różnorodne techniki spawania — TIG, MIG, MAG, MMA</span> — wybierając odpowiednią metodę do każdego materiału i projektu. Nasze realizacje obejmują <span class="highlight">bramy, balustrady, zadaszenia, wiaty, konstrukcje stalowe, elementy ozdobne</span> i wiele więcej.</p>
+
+                    <p>Każda praca przechodzi przez <span class="highlight">kontrolę jakości na poszczególnych etapach produkcji</span> — od przygotowania materiału, przez spawanie, aż do wykończenia. Gwarantujemy <span class="highlight">terminowość, solidność i niezawodność</span> — to obietnica, którą spełniamy od lat.</p>
+
+                    <div class="highlight-box">
+                        <h4>🎯 Nowa Jakość w 2025</h4>
+                        <p>Na koniec roku 2025 wdrażamy <span class="highlight">profesjonalne malowanie proszkowe.</span> To nowoczesna technologia, która doskonale chroni metal przed korozją, nadaje wytrzymałość, estetykę i długotrwałość. <span class="highlight">Nie tylko malujemy własne wykonane prace — możemy odmalować także Waszą dostarczoną konstrukcję.</span> To kolejny krok w rozwoju naszej firmy, podyktowany chęcią pełnego obsługiwania naszych klientów.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>👥 Nasi Klienci</h4>
+                        <p>Mamy setki zadowolonych klientów z całego kraju — od małych mieszkańców po duże obiekty przemysłowe. Naszymi realizacjami są <span class="highlight">domy, magazyny, hale produkcyjne, baseny, lokale handlowe</span> i wiele innych. Każdy projekt jest indywidualnie analizowany i dopasowany do Waszych potrzeb.</p>
                     </div>
                 </div>
-                <div class="about-image">
-                    <picture>
-                        <source srcset="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop&q=80&fm=webp 1x, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop&q=80&fm=webp 2x" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop&q=80" alt="KADAR-SPAW - Profesjonalne spawanie stali i konstrukcje metalowe" loading="lazy" width="400" height="400">
-                    </picture>
-                    <div class="image-badge">✓ 20+ Lat Doświadczenia</div>
+
+                <div class="about-image">                        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=400&h=400&fit=crop&q=80" alt="KADAR-SPAW - Profesjonalne spawanie stali" loading="lazy" width="320" height="320">
+                    <div class="image-badge">✓ Doświadczenie</div>
                 </div>
             </div>
         </section>
 
-        <!-- SEKCJA PORTFOLIO -->
+        <!-- SEKCJA PORTFOLIO / REALIZACJE -->
         <section id="portfolio">
             <h2>Nasze Realizacje</h2>
             <div class="portfolio-grid">
+                <!-- OGRODZENIA -->
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <picture>
-                            <source srcset="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=300&fit=crop&q=80&fm=webp 1x, https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1000&h=600&fit=crop&q=80&fm=webp 2x" type="image/webp">
-                            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=300&fit=crop&q=80" alt="Konstrukcja stalowa hali produkcyjnej - KADAR-SPAW" loading="lazy" width="500" height="300">
-                        </picture>
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Ogrodzenia metalowe - KADAR-SPAW" loading="lazy" width="500" height="300">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Zobacz szczegóły projektu</div>
+                            <div class="overlay-text">Ogrodzenia Metalowe</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Konstrukcja Stalowa Hali Produkcyjnej <span class="cta-badge">AKTUALNE</span></h3>
-                        <p><strong>Wartość projektu: 180 000 zł</strong> — Całkowite spawanie konstrukcji stalowej hali o wymiarach 60m x 40m dla dużej fabryki mebli. Projekt obejmował 2500 metrów liniowych spawu, wszystkie prace wykonane z certyfikacją ISO 9001. Czas realizacji: 6 miesięcy. Gwarancja: 10 lat na każde połączenie. <strong>Wynik: 0 wad krytycznych po badaniach ultradźwiękowych.</strong></p>
-                        <div class="project-tags">
-                            <span class="tag">Spawanie MIG/MAG</span>
-                            <span class="tag">Konstrukcje Nośne</span>
-                            <span class="tag">ISO 9001</span>
-                            <span class="tag">2500m spawu</span>
-                        </div>
+                        <h3>Ogrodzenia Metalowe — Solidność i Estetyka</h3>
+                        <p>Spawane ogrodzenia ze stali, dostosowane do każdego terenu i wymagań. Od prostych konstrukcji po zaawansowane projekty z ozdobnymi wzorami. Każde ogrodzenie jest wytrzymałe, trwałe i stanowi doskonałą ochronę dla Twojej nieruchomości. Realizujemy montaż na całej długości.</p>
                     </div>
                 </div>
 
+                <!-- FURTKI I BRAMY -->
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <picture>
-                            <source srcset="https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=500&h=300&fit=crop&q=80&fm=webp 1x, https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=1000&h=600&fit=crop&q=80&fm=webp 2x" type="image/webp">
-                            <img src="https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Bramy automatyczne ze stali ocynkowanej - KADAR-SPAW" loading="lazy" width="500" height="300">
-                        </picture>
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Furtki i bramy - KADAR-SPAW" loading="lazy" width="500" height="300">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Zobacz szczegóły projektu</div>
+                            <div class="overlay-text">Furtki i Bramy</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>System Bram Automatycznych</h3>
-                        <p>Projektowanie i spawanie zestawu nowoczesnych bram automatycznych ze stali ocynkowanej dla kompleksu biznesowego. Całkowita długość ogrodzenia: 500 metrów. System wyposażony w napędy elektryczne i systemy bezpieczeństwa.</p>
-                        <div class="project-tags">
-                            <span class="tag">Ogrodzenia</span>
-                            <span class="tag">Stal Ocynkowana</span>
-                            <span class="tag">Automatyka</span>
-                        </div>
+                        <h3>Furtki i Bramy Wjazdowe</h3>
+                        <p>Profesjonalnie spawane furtki i bramy wjazdowe ze stali ocynkowanej. Dostępne w wersjach ręcznych i automatycznych z systemami bezpieczeństwa. Każda konstrukcja jest indywidualnie projektowana i dopasowana do Twojego wjazdu. Gwarantujemy precyzję i trwałość.</p>
                     </div>
                 </div>
 
+                <!-- BALUSTRADY I BARIERKI -->
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Struktury Nośne">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Balustrady - KADAR-SPAW" loading="lazy" width="500" height="300">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Zobacz szczegóły projektu</div>
+                            <div class="overlay-text">Balustrady i Barierki</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Zadaszenie Parku Transportu Publicznego</h3>
-                        <p>Spawanie zadaszenia ze stali nierdzewnej dla autobusów i tramwajów. Struktura wytrzymuje obciążenie śniegu do 300 kg/m². Wszystkie spawy przetestowane ultradźwiękami. Projekt wymagał precyzji na poziomie milimetrów.</p>
-                        <div class="project-tags">
-                            <span class="tag">Spawanie TIG</span>
-                            <span class="tag">Nierdzewka</span>
-                            <span class="tag">Badania Nieniszczące</span>
-                        </div>
+                        <h3>Balustrady i Barierki Ochronne</h3>
+                        <p>Balustrady i barierki ze stali nierdzewnej i ocynkowanej — nowoczesne i bezpieczne. Idealne do schodów, balkonów, tarasów i pomieszczeń publicznych. Każdy projekt jest dopasowany do wymagań bezpieczeństwa i estetyki. Oferujemy także warianty ze szkłem hartowanym.</p>
                     </div>
                 </div>
 
+                <!-- SCHODY METALOWE -->
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1581092163562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Konstrukcje Przemysłowe">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Schody metalowe - KADAR-SPAW" loading="lazy" width="500" height="300">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Zobacz szczegóły projektu</div>
+                            <div class="overlay-text">Schody Metalowe</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Konstrukcje Przemysłowe dla Zakładu Chemicznego</h3>
-                        <p>Spawanie specjalistycznych konstrukcji dla urządzeń przemysłowych. Wymóg: wytrzymałość na ciśnienie i temperatury do 200°C. Wszystkie materiały spełniały normy ASME. Projekt zakończył się z wynikiem 0 wad kritycznych.</p>
-                        <div class="project-tags">
-                            <span class="tag">Wysokie Temperatury</span>
-                            <span class="tag">ASME Certified</span>
-                            <span class="tag">Ciśnienie</span>
-                        </div>
+                        <h3>Schody Metalowe — Nowoczesny Design</h3>
+                        <p>Schody spawane ze stali nierdzewnej i ocynkowanej — solidne i estetyczne. Dostępne w różnych stylach: proste, spiralne, przemysłowe. Każdy stopień jest precyzyjnie spawany. Realizujemy projekty na wymiar, dostosowując wymiary i wzory do Twoich pomieszczeń.</p>
                     </div>
                 </div>
 
+                <!-- DŹWIGARY I KONSTRUKCJE -->
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Gięcie Blachy">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Dźwigary stalowe - KADAR-SPAW" loading="lazy" width="500" height="300">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Zobacz szczegóły projektu</div>
+                            <div class="overlay-text">Dźwigary Stalowe</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Kompleks Instalacji Rurowych</h3>
-                        <p>Spawanie i montaż systemu rurociągów dla zakładu przetwórczego. Długość całkowita: 1200 metrów. Wszystkie połączenia poddane testom szczelności pod ciśnieniem. Gwarancja: 10 lat na każde połączenie.</p>
-                        <div class="project-tags">
-                            <span class="tag">Rurociągi</span>
-                            <span class="tag">Testy Szczelności</span>
-                            <span class="tag">Gwarancja 10 lat</span>
-                        </div>
+                        <h3>Dźwigary i Konstrukcje Nośne</h3>
+                        <p>Spawane dźwigary i konstrukcje stalowe do wiat, przybytków przy halach i dużych projektów. Każdy element jest precyzyjnie obliczony i spawany. Pracujemy z normami ASME i EN. Realizujemy montaż na terenie — transport i instalacja gratis w zasięgu całej Polski.</p>
                     </div>
                 </div>
 
+                <!-- WIATY I GARAŻE -->
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40ba08e6a7da?w=500&h=300&fit=crop&q=80" alt="Usługi na Terenie">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Wiaty i garaże - KADAR-SPAW" loading="lazy" width="500" height="300">
                         <div class="portfolio-overlay">
-                            <div class="overlay-text">Zobacz szczegóły projektu</div>
+                            <div class="overlay-text">Wiaty i Garaże</div>
                         </div>
                     </div>
                     <div class="portfolio-item-content">
-                        <h3>Montaż Konstrukcji na Terenie Klienta</h3>
-                        <p>Profesjonalne usługi spawania i montażu na terenie klienta w całej Polsce. Posiadamy własny transport, magazyny tymczasowe i wszystkie niezbędne certyfikacje. Średni czas realizacji: 4-8 tygodni od zamówienia.</p>
-                        <div class="project-tags">
-                            <span class="tag">Montaż na Terenie</span>
-                            <span class="tag">Transport</span>
-                            <span class="tag">Całopolskie</span>
-                        </div>
+                        <h3>Wiaty i Garaże — Nowoczesne Rozwiązania</h3>
+                        <p>Konstrukcje stalowe wiat, garażów i przedsionków do hal produkcyjnych. Solidne spawy, pokrycie blachą lub przeszklone — dostosowujemy do Twoich potrzeb. Każda struktura jest wytrzymała, funkcjonalna i estetyczna. Montaż profesjonalny na terenie klienta.</p>
                     </div>
                 </div>
+
+                <!-- KRATY BEZPIECZEŃSTWA -->
+                <div class="portfolio-item">
+                    <div class="portfolio-item-image">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Kraty bezpieczeństwa - KADAR-SPAW" loading="lazy" width="500" height="300">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-text">Kraty Bezpieczeństwa</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-content">
+                        <h3>Kraty Bezpieczeństwa — Ochrona dla Okien i Drzwi</h3>
+                        <p>Spawane kraty metalowe do okien i drzwi — niezawodna ochrona przed włamaniem. Dostępne w różnych wzorach i wymiarach. Każda krata jest solidnie spawana ze stali nierdzewnej lub ocynkowanej. Oferujemy także warianty ruchome do czyszczenia.</p>
+                    </div>
+                </div>
+
+                <!-- POJEMNIKI I KLATKI UŻYTKOWE -->
+                <div class="portfolio-item">
+                    <div class="portfolio-item-image">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Pojemniki i klatki - KADAR-SPAW" loading="lazy" width="500" height="300">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-text">Pojemniki Użytkowe</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-content">
+                        <h3>Pojemniki i Klatki Użytkowe</h3>
+                        <p>Spawane klatki i pojemniki metalowe do przechowywania — butle z gazem, kosze śmieci, materiały magazynowe. Projektujemy na wymiar, dostosowując pojemność i wymiary do potrzeb. Każdy pojemnik jest solidnie spawany ze stali ocynkowanej. Funkcjonalne rozwiązania dla firm i gospodarstw.</p>
+                    </div>
+                </div>
+
+                <!-- BILLBOARDY I KONSTRUKCJE REKLAMOWE -->
+                <div class="portfolio-item">
+                    <div class="portfolio-item-image">
+                        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/76dcdfbe-1b19-4b61-aa8d-80796bd3ae1f" alt="Billboardy - KADAR-SPAW" loading="lazy" width="500" height="300">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-text">Billboardy Reklamowe</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item-content">
+                        <h3>Billboardy i Konstrukcje Reklamowe</h3>
+                        <p>Spawane konstrukcje stalowe do billboardów i systemów reklamowych. Solidne, wytrzymałe na wiatr i opady. Każda konstrukcja jest projektowana i obliczana statycznie. Oferujemy montaż na terenie — gwarantujemy stabilność i bezpieczeństwo długoletnie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA MALOWANIE PROSZKOWE -->
+        <section id="painting">
+            <h2>Malowanie Proszkowe — Nowa Jakość 2025</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Nowoczesna technologia ochrony metalu — malowanie proszkowe doskonale chroni przed korozją, warunkami pogodowymi i mechnicznym uszkodzeniami. Oferujemy <span class="highlight">szeroką paletę kolorów</span>, <span class="highlight">profesjonalną obróbkę wstępną</span> i <span class="highlight">piaskowanie</span>. Malujemy zarówno <span class="highlight">nasze własne wyroby, jak i konstrukcje dostarczone przez klientów</span>.</p>
+            
+            <div class="home-benefits" style="max-width: 1000px;">
+                <div class="benefit-item">
+                    <h4>🛡️ Ochrona Przed Korozją</h4>
+                    <p>Powłoka proszkowa chroni metal przez wiele lat, idealnie dla środowisk wilgotnych i agresywnych.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🎨 Szeroka Paleta Kolorów</h4>
+                    <p>Ponad 100 odcieni do wyboru — od klasycznych czerni i bieli po kolory pełnowartościowe.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>⚡ Szybka Realizacja</h4>
+                    <p>Profesjonalny proces piaskowania i lakierowania — gotowe elementy w ustalonym terminie.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>✓ Gwarancja Jakości</h4>
+                    <p>Każda powłoka jest kontrolowana. Gwarantujemy grubość i równomierność lakieru.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA GALERIA -->
+        <section id="gallery">
+            <h2>Galeria — Więcej Realizacji</h2>
+            <div class="gallery-info">
+                <p>Zapraszamy do przeglądania naszej pełnej galerii na <span class="highlight">Facebooku</span>, gdzie znajdziesz zdjęcia wszystkich naszych realizacji. Możesz tam zobaczyć <span class="highlight">balustrady, bramy, wiaty, konstrukcje stalowe</span> i wiele innych projektów, które realizujemy dla naszych klientów.</p>
+                <a href="https://www.facebook.com/profile.php?id=100064998399872&sk=photos" target="_blank" rel="noopener noreferrer" class="gallery-button">📸 Odwiedź Naszą Galerię na Facebooku</a>
+                <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--color-text-light); font-style: italic;">Tam znajdziesz dokładne zdjęcia naszych projektów, zaawansowanych spawów i gotowych realizacji dla rzeczywistych klientów.</p>
             </div>
         </section>
 
@@ -1087,7 +1188,7 @@
             <h2>Poproś o Wycenę</h2>
             <form class="contact-form" id="contactForm">
                 <div class="success-message" id="successMessage">
-                    ✓ Dziękuję! Twoja wiadomość została wysłana. Odpowiem najszybciej jak to możliwe!
+                    ✓ Dziękuję! Twoja wiadomość została przyjęta. Odpowiemy jak najszybciej!
                 </div>
 
                 <div class="form-group" id="nameGroup">
@@ -1107,10 +1208,17 @@
                     <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
                 </div>
 
-                <div class="form-group" id="subjectGroup">
-                    <label for="subject">Typ Pracy *</label>
-                    <input type="text" id="subject" name="subject" placeholder="np. Spawanie konstrukcji stalowych, Bramy metalowe..." required>
-                    <span class="error-message">Typ pracy jest wymagany</span>
+                <div class="form-group" id="serviceGroup">
+                    <label for="service">Typ Usługi *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Wybierz usługę...</option>
+                        <option value="spawanie">Spawanie</option>
+                        <option value="slusarstwo">Ślusarstwo (Bramy, Balustrady, itd.)</option>
+                        <option value="malowanie">Malowanie Proszkowe</option>
+                        <option value="konstrukcje">Konstrukcje Stalowe</option>
+                        <option value="inne">Inne — Opiszę w wiadomości</option>
+                    </select>
+                    <span class="error-message">Proszę wybrać typ usługi</span>
                 </div>
 
                 <div class="form-group" id="messageGroup">
@@ -1119,41 +1227,116 @@
                     <span class="error-message">Opis jest wymagany (min. 10 znaków)</span>
                 </div>
 
-                <button type="submit">Poproś o Wycenę</button>
+                <div class="form-group">
+                    <label for="fileInput">Dołącz Zdjęcia lub Rysunki (opcjonalnie)</label>
+                    <div class="file-input-wrapper">
+                        <label for="fileInput" class="file-input-label">
+                            📎 Kliknij aby wybrać pliki lub przeciągnij tutaj
+                        </label>
+                        <input type="file" id="fileInput" name="files" multiple accept="image/*,.pdf,.dwg,.dxf">
+                    </div>
+                    <div class="file-list" id="fileList"></div>
+                </div>
+
+                <button type="submit">Wyślij Zapytanie</button>
             </form>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 KADAR-SPAW sp. z o.o. Wszystkie prawa zastrzeżone.</p>
-        <p>📍 <strong>Tręby Nowe</strong>, Polska | 📧 <strong>kontakt@kadarspaw.pl</strong> | 📞 <strong>+48 XXX XXX XXX</strong> | 🕐 Pon-Pt: 7:00-18:00</p>
+        <p>&copy; 2025 KADAR-SPAW. Wszystkie prawa zastrzeżone.</p>
+        <p>📍 <strong>Tręby Nowe</strong>, Polska | 📧 <strong>kontakt@kadarspaw.pl</strong> | 📞 <strong>+48 663 682 218</strong></p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">
-            ⭐ <strong>Certyfikowani • ISO 9001 • Ubezpieczeni OC • Gwarancja 10 lat</strong> ⭐
+            ⭐ <strong>Solidność • Terminowość • Profesjonalizm • Gwarancja</strong> ⭐
         </p>
         <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.6;">
-            Potrzebujesz spawania? <a href="#contact">→ Poproś o darmową wycenę</a> | <a href="#portfolio">Nasze realizacje</a> | <a href="#about">O nas</a>
+            <a href="#contact">Poproś wycenę</a> | <a href="#portfolio">Realizacje</a> | <a href="#gallery">Galeria</a> | <a href="#about">O nas</a>
         </p>
     </footer>
 
     <script>
-        // Form Validation & Submission
+        // ===== FILE UPLOAD HANDLING =====
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        const uploadedFiles = [];
+
+        fileInput.addEventListener('change', handleFileSelect);
+
+        function handleFileSelect(event) {
+            const files = Array.from(event.target.files);
+            files.forEach(file => {
+                if (!uploadedFiles.find(f => f.name === file.name && f.size === file.size)) {
+                    uploadedFiles.push(file);
+                }
+            });
+            updateFileList();
+            fileInput.value = '';
+        }
+
+        // Drag and drop
+        document.querySelector('.file-input-label').addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.1))';
+        });
+
+        document.querySelector('.file-input-label').addEventListener('dragleave', (e) => {
+            e.currentTarget.style.background = 'linear-gradient(135deg, var(--color-primary-light), rgba(220, 38, 38, 0.05))';
+        });
+
+        document.querySelector('.file-input-label').addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.currentTarget.style.background = 'linear-gradient(135deg, var(--color-primary-light), rgba(220, 38, 38, 0.05))';
+            const files = Array.from(e.dataTransfer.files);
+            files.forEach(file => {
+                if (!uploadedFiles.find(f => f.name === file.name && f.size === file.size)) {
+                    uploadedFiles.push(file);
+                }
+            });
+            updateFileList();
+        });
+
+        function updateFileList() {
+            if (uploadedFiles.length === 0) {
+                fileList.classList.remove('show');
+                return;
+            }
+            fileList.classList.add('show');
+            fileList.innerHTML = uploadedFiles.map((file, index) => `
+                <div class="file-item">
+                    <span>📄 ${file.name} (${formatFileSize(file.size)})</span>
+                    <span class="remove-file" onclick="removeFile(${index})">✕ Usuń</span>
+                </div>
+            `).join('');
+        }
+
+        function removeFile(index) {
+            uploadedFiles.splice(index, 1);
+            updateFileList();
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+        }
+
+        // ===== FORM VALIDATION & SUBMISSION =====
         const form = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            // Reset previous states
             clearErrors();
             successMessage.classList.remove('show');
 
-            // Get form data
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
+            const service = document.getElementById('service').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            // Validation
             let isValid = true;
 
             if (!name || name.length < 3) {
@@ -1166,8 +1349,8 @@
                 isValid = false;
             }
 
-            if (!subject || subject.length < 3) {
-                addError('subjectGroup', 'Temat musi mieć co najmniej 3 znaki');
+            if (!service) {
+                addError('serviceGroup', 'Proszę wybrać typ usługi');
                 isValid = false;
             }
 
@@ -1178,17 +1361,16 @@
 
             if (!isValid) return;
 
-            // Success handling
             showSuccess();
             form.reset();
+            uploadedFiles.length = 0;
+            updateFileList();
 
-            // Scroll to success message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-            // Clear success message after 5 seconds
             setTimeout(() => {
                 successMessage.classList.remove('show');
-            }, 5000);
+            }, 6000);
         });
 
         function isValidEmail(email) {
@@ -1213,22 +1395,13 @@
             successMessage.classList.add('show');
         }
 
-        // Input focus effects
-        document.querySelectorAll('input, textarea').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.01)';
-            });
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
-        });
-
-        // Smooth scrolling for navigation
+        // ===== SMOOTH SCROLLING =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -1237,7 +1410,7 @@
             });
         });
 
-        // Add scroll animation for sections
+        // ===== SECTION ANIMATIONS =====
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -1259,7 +1432,7 @@
             observer.observe(section);
         });
 
-        // Navigation highlight on scroll
+        // ===== NAVIGATION HIGHLIGHT =====
         window.addEventListener('scroll', function() {
             let current = '';
             const sections = document.querySelectorAll('section');
